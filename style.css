@@ -1,6 +1,41 @@
 html, body {
-    font-family: 'Trebuchet MS',Roboto,Lato,"proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-family: 'DINWebPro','Trebuchet MS',Roboto,Lato,"proxima-nova","Helvetica Neue",Arial,sans-serif;
+    color: #1a1a1a;
 }
 
-a { color: #77B900; }
-a:visited { color: #6f9c26; }
+a { 
+    color: #77B900; 
+}
+
+a:visited { 
+    color: #6f9c26; 
+}
+
+p.note{
+    font-style: italic;
+    font-size: 10pt;
+}
+
+p.copyright{
+    font-size: 10pt;
+    color: #999999
+}
+
+hr{
+    margin: 0;
+    border-width: 1px 0px 0px;
+    border-style: solid;
+    border-top-color: #cccccc;
+}
+
+img {
+    width: 100%;
+    max-width: 960px;
+}
+
+@media only screen and (max-width: 1000px) {
+    /* For mobile phones: */
+    img {
+      width: 100% !important;
+    }
+  }
