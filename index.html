@@ -1,15 +1,121 @@
 <!DOCTYPE html>
+<!--Copyright (c) 2021 NVIDIA-->
+
 <html>
 
 <head>
     <title>S2021 Latewarp Demo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.png">
 </head>
 
 <body>
-<h1>Coming soon...</h1>
-<a href="https://research.nvidia.com/publication/2021-08_Gaming-at-Warp">NVResearch Project Page</a>
+
+<h1>Gaming at Warp Speed: Improving Aiming With Late Warp</h1>
+
+<p>This project includes a demonstration of late warp techniques, commonly used in VR for image stablization realtive to head position, for ego-centric/first-person gaming.</p>
+<p class="note"> For more information check out our <a href="https://research.nvidia.com/publication/2021-08_Gaming-at-Warp">NVResearch Project Page</a></p>
+
+<hr>
+
+<h2>Instructions</h1>
+<p>Our demo can be used in one of two modes:</p>
+<ul>
+<li><a href="https://nvlabs.github.io/FPSWarpDemo">Experiment mode</a> - A set of trials designed to demonstrate the impacts of latency on first-person aiming and the improvement offered by a simple late warp</li>
+<li><a href="https://nvlabs.github.io/FPSWarpDemo?mode=sandbox">Sandbox mode</a> - A free exploration mode with many additional settings, including rendering, player, target, and scene parameters</li>
+</ul>
+
+<p>
+    The complete experiment should take about <b>5 minutes</b> to complete.
+    Try your best to complete all trials in <b>minimum time</b> with the <b>highest accuracy</b> you can achieve.
+</p>
+
+<p class="note">At the end of the set of experiment mode trials, the application automatically transitions to sandbox mode (the page can be reloaded to repeat the experiment)</p>
+
+<hr>
+
+<h2>Experiment Mode</h2>
+<p>
+    In experiment mode the application begins with a training session in which the user can set their mouse sensitivity (using the up and down arrow keys, or by pressing escape and using a slider) and familiarize themselves with the environment.
+    Upon visiting the <a href="https://nvlabs.github.io/FPSWarpDemo">experiment mode link</a> provided above, a  welcome screen greets the user.
+</p>
+
+<h3>Training Session</h3>
+<p>
+    The experiment welcome screen outlines the basic control interface and prompts the user to click to enter fullscreen mode and begin interacting with the experiment training session.
+    Once the user clicks on this screen the application should become fullscreen (or display a message if your browser does not support this) and provide the following view.
+</p>
+<p class="note">You can return to this screen at any time by pressing the escape key </p>
+
+<p> The training session is intended to familiarize users with the experience and type of targets they will be asked to destroy in the following trials. </p>
+<p> In this view moving the mouse left and right will rotate the view azimuth (yaw) angle while moving the mouse up and down will rotate the view elevation (pitch) angle. </p>
+
+<img src="images/IntroDisplay.png" alt="Intro Display" style="width:50%"> 
+<img src="images/StartOfTraining.png" alt="Start of Training" style="width:48%">
+
+<p> Training begins when the user left clicks on the red reference target, destroying it and spawning the first moving training target. </p>
+<p> During training the user can adjust their mouse sensitivity at any point by using the keyboard <b>up/down arrows</b>, or by pressing escape and using the cursor to adjust the "Mouse Sensitivty" slider located at the top of the screen. </p>
+<p class="note"> Feel free to take a break following training if you'd like one </p>
+
+<h3>Measurement Sessions</h3>
+
+<p>    Once the user has successfully destroyed all training targets another red reference target will spawn indicating the start of the measured trials.</p>
+
+<p> There are a total of <b>3 trial conditions</b> presented in the experiment:</p>
+<ul>
+    <li>Low latency condition (no added delay)</li>
+    <li>High latency condition (added delay)</li>
+    <li>High latency condition with warp correction</li>
+</ul>
+<p>
+    Each condition consists of the same number of trials.
+    Try to do your best to maintain both <b>high accuracy</b> and <b>minimal time</b> in every condition.
+</p>
+
+<img src="images/StartOfTask.png" alt="Start of Task" style="width:49%">
+<img src="images/InTask.png" alt="In Task" style="width:49%">
+
+<p>
+    Depending on how fast you rotate the view, you will likely notice <i>guardband artifacts</i> in the late warp condition. 
+    These show up as black areas at the edge(s) of the screen and represent information missing from the original render that isn't filled in by our warp and are expected.
+    Try your best to maintain your performance in spite of these visual artifacts.
+</p>
+
+<p>
+    Upon completing the experiment you will be presented with a summary of their performance in all 3 conditions.
+    This data is not logged by the application and only presented by this display.
+</p>
+
+<img src="images/Latewarp.png" alt="Guardband Artifacts" style="width:49%">
+<img src="images/example_results.png" alt="Example Results" style="width:49%">
+
+<p> This window will close when the user presses <b>Shift</b> on the keyboard, and the experiment will automatically transition to sandbox mode. </p>
+<p class="note"> If you'd like to repeat the experiment you can reload the page or revisit <a href="https://nvlabs.github.io/FPSWarpDemo">the link provided above</a></p>
+
+<hr>
+
+<h2>Sandbox Mode</h2>
+<p>In <a href="https://nvlabs.github.io/FPSWarpDemo?mode=sandbox">sandbox mode</a> the user can openly interact with the application's configuration through a menu without a need to complete the experiment provided by <a href="https://nvlabs.github.io/FPSWarpDemo">experiment mode</a>.</p>
+<p>In sandbox mode the user may destroy as many targets as they like in any given condition, with a score "banner" at the top of the screen keeping track of:</p>
+
+<ul>
+    <li>Total targets destroyed since a reset</li>
+    <li>Average time between targets destroyed</li>
+    <li>Overall accuracy</li>
+</ul>
+
+<p>To reset these statistics the user can press the <b>R</b> key on their keyboard at any time.</p>
+
+<h3>Sandbox Mode Configuration</h3>
+<p>
+    To interact with this menu the user can press escape (if in fullscreen mode) and use the cursor to click on the drawers to expand them and view their contents.
+    From within these drawers many of the application parameters are exposed.
+</p>
+
+<img src="images/SandboxModeMenu.png" alt="Sandbox Mode Menu" style="width:49%">
+<img src="images/SandboxModeRenderDrawer.png" alt="Sandbox Mode Render Drawer" style="width:49%">
+
+<p class="copyright">© 2021 NVIDIA</p>
 
 </body>
-
 </html>
